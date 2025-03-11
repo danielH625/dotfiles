@@ -35,7 +35,7 @@ show_always = true
 
 [hostname]
 ssh_only = false
-format = '[//](white) [$hostname](#a6e3a1 bold) '  # Green
+format = '[//](white) [$hostname](#94e2d5 bold) '  # Green
 disabled = false
 
 [directory]
