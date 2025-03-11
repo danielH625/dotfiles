@@ -1,0 +1,90 @@
+{
+  "layer": "top",
+  "modules-left": [
+    "custom/launcher",
+    "cpu",
+    "memory",
+    "network",
+    "custom/wallpaper"
+  ],
+  "modules-center": [
+    "hyprland/workspaces"
+  ],
+  "modules-right": [
+    "backlight",
+    "pulseaudio",
+    "clock",
+    "battery",
+    "custom/power"
+  ],
+  "pulseaudio": {
+    "tooltip": false,
+    "scroll-step": 5,
+    "format": "{icon} {volume}%",
+    "format-muted": " {volume}%",
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "format-icons": {
+      "default": ["", "", ""]
+    }
+  },
+  "hyprland/workspaces": {
+    "disable-scroll": false
+  },
+  "network": {
+    "tooltip": false,
+    "format-wifi": "  {essid}",
+    "format-ethernet": "󰤯 {ifname}",
+    "interval": 10
+  },
+  "backlight": {
+    "tooltip": false,
+    "format": " {}%",
+    "interval": 1,
+    "on-scroll-up": "light -A 5",
+    "on-scroll-down": "light -U 5"
+  },
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 20
+    },
+    "format": "{icon}  {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{time} {icon}",
+    "format-icons": ["", "", "", "", ""]
+  },
+  "tray": {
+    "icon-size": 18,
+    "spacing": 4
+  },
+  "clock": {
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format": " {:%a, %d %b,  %I:%M %p}"
+    },
+  "cpu": {
+    "interval": 15,
+    "format": " {}%",
+    "max-length": 10
+  },
+  "memory": {
+    "interval": 30,
+    "format": " {}%",
+    "max-length": 10
+  },
+  "custom/launcher": {
+    "format": "",
+    "on-click": "wofi --show drun",
+    "on-click-right": "killall wofi"
+  },
+  "custom/power":{
+        "format": " ",
+        "on-click": "wlogout",
+  },
+  "custom/wallpaper":{
+        "format":" ",
+        "on-click": "bash ~/.config/scripts/wallpaper-rand.sh"
+    }
+}
+
