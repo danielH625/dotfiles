@@ -1,7 +1,7 @@
 add_newline = true
 command_timeout = 2000
 
-format = """$env_var$os$username$hostname$kubernetes$docker_context$directory$git_branch$git_status$python$golang$c
+format = """$env_var$os$username$hostname$kubernetes$docker_context$directory$git_branch$git_status$python$golang$c$lua
 $character
 """
 
@@ -35,7 +35,7 @@ show_always = true
 
 [hostname]
 ssh_only = false
-format = '[//](white) [$hostname](#94e2d5 bold) '  # Green
+format = '[//](white) [$hostname](#94e2d5 bold) '  # Teal
 disabled = false
 
 [directory]
@@ -92,4 +92,9 @@ disabled = false
 [c]
 symbol = ''
 style = '#89b4fa'  # Blue
+format = '[//](white) [${symbol} ${version}]($style) '
+
+[lua]
+symbol = ''
+style = '#b4befe'  # Rosewater
 format = '[//](white) [${symbol} ${version}]($style) '

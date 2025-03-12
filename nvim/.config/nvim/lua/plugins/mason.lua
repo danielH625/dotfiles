@@ -19,6 +19,7 @@ return {
         "html", -- HTML
         "cssls", -- CSS
         "lua_ls", -- Lua
+        "asm_lsp", -- Assembly
       },
     })
 
@@ -30,6 +31,7 @@ return {
         "yapf", -- Python formatter
         "isort", -- Python import sorter
         "eslint_d", -- JS linter
+        "asmfmt", -- Assembly formatter
       },
     })
   end,
