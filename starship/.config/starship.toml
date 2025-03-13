@@ -91,7 +91,7 @@ disabled = false
 
 [c]
 symbol = ''
-style = '#89b4fa'  # Blue
+style = '#74c7ec'  # Saphire
 format = '[//](white) [${symbol} ${version}]($style) '
 
 [lua]

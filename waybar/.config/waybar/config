@@ -74,7 +74,7 @@
     "max-length": 10
   },
   "custom/launcher": {
-    "format": "",
+    "format": "",
     "on-click": "wofi --show drun",
     "on-click-right": "killall wofi"
   },

@@ -28,10 +28,12 @@ return {
       ensure_installed = {
         "prettier", -- JS/HTML/CSS formatter
         "stylua", -- Lua formatter
-        "yapf", -- Python formatter
+        "yapf",  -- Python formatter
         "isort", -- Python import sorter
         "eslint_d", -- JS linter
         "asmfmt", -- Assembly formatter
+        "shfmt", -- Bash formatter
+        "goimports", -- Go formatter
       },
     })
   end,
