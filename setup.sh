@@ -1,9 +1,5 @@
 #!/bin/bash
 
-# Define GitHub repo for dotfiles
-DOTFILES_REPO="https://github.com/danielH625/dotfiles"
-DOTFILES_DIR="$HOME/dotfiles"
-
 # Detect OS
 if [ -f /etc/os-release ]; then
   . /etc/os-release
@@ -52,14 +48,8 @@ install_packages() {
 # Install packages
 install_packages
 
-# Clone dotfiles repo and apply stow
-if [ ! -d "$DOTFILES_DIR" ]; then
-  echo "Cloning dotfiles..."
-  git clone "$DOTFILES_REPO" "$DOTFILES_DIR"
-fi
-
+# Stow dotfiles (force overwrite)
 echo "Applying dotfiles with stow..."
-cd "$DOTFILES_DIR" || exit
-stow */
+stow --restow --verbose */
 
 echo "Setup complete!"
