@@ -3,6 +3,7 @@
 #
 
 eval "$(starship init bash)"
+alias icat="kitten icat"
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return

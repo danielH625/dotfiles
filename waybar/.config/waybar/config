@@ -34,14 +34,16 @@
     "tooltip": false,
     "format-wifi": "  {essid}",
     "format-ethernet": "󰤯 {ifname}",
-    "interval": 10
+    "interval": 10,
+    "on-click": "nm-connection-editor",
+    "on-click-right": "pkill -f nm-connection-editor"
   },
   "backlight": {
     "tooltip": false,
     "format": " {}%",
     "interval": 1,
-    "on-scroll-up": "light -A 5",
-    "on-scroll-down": "light -U 5"
+    "on-scroll-up": "brightnessctl s 5%+",
+    "on-scroll-down": "brightnessctl s 5%-"
   },
   "battery": {
     "states": {
@@ -61,7 +63,9 @@
   },
   "clock": {
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format": " {:%a, %d %b,  %I:%M %p}"
+    "format": " {:%a, %d %b,  %I:%M %p}",
+    "on-click": "gnome-calendar",
+    "on-click-right": "pkill gnome-calendar"
     },
   "cpu": {
     "interval": 15,

@@ -31,9 +31,9 @@ return {
         "yapf",  -- Python formatter
         "isort", -- Python import sorter
         "eslint_d", -- JS linter
-        "asmfmt", -- Assembly formatter
         "shfmt", -- Bash formatter
         "goimports", -- Go formatter
+        "asmfmt", -- Assembly formatter
       },
     })
   end,

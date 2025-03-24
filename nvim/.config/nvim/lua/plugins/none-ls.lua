@@ -11,9 +11,9 @@ return {
         null_ls.builtins.formatting.isort, -- Python import sorting
         null_ls.builtins.formatting.prettier, -- JS/HTML/CSS
         null_ls.builtins.formatting.stylua, -- Lua
-        null_ls.builtins.formatting.asmfmt, -- Assembly
         null_ls.builtins.formatting.shfmt, -- Bash
         null_ls.builtins.formatting.goimports, -- Golang
+        null_ls.builtins.formatting.asmfmt, -- Assembly
       },
     })
     vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
