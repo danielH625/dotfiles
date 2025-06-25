@@ -35,12 +35,12 @@ NUM_MONITORS_ACTIVE=$(hyprctl monitors | grep --count Monitor)
 # For initial startup if you use hyprland's default monitor settings:
 # Turn off the laptop monitor if it + another monitor is active
 if [ "$NUM_MONITORS_ACTIVE" -ge 2 ] && hyprctl monitors | cut --delimiter ' ' --fields 2 | grep --quiet ^$INTERNAL_MONITOR; then
-    # Doing this I hopefully end up on workspace 1 on the external monitor rather than 2 at startup
-    move_all_workspaces_to_monitor $EXTERNAL_MONITOR
-    hyprctl keyword monitor "$INTERNAL_MONITOR, disable"
-    # Alternate fix to ensure I start on workspace 1
-    #hyprctl dispatch workspace 1
-    exit
+  # Doing this I hopefully end up on workspace 1 on the external monitor rather than 2 at startup
+  move_all_workspaces_to_monitor $EXTERNAL_MONITOR
+  hyprctl keyword monitor "$INTERNAL_MONITOR, disable"
+  # Alternate fix to ensure I start on workspace 1
+  #hyprctl dispatch workspace 1
+  exit
 fi
 
 # For dynamically toggling which monitor is active later via a keybind
@@ -54,7 +54,7 @@ if [ "$NUM_MONITORS" -gt 1 ]; then # Handling multiple monitors
     move_all_workspaces_to_monitor $EXTERNAL_MONITOR
     hyprctl keyword monitor "$INTERNAL_MONITOR, disable"
   fi
-else  # If the external monitor is disconnected without running this script first, it might become the case that no monitor is on - therefore turn on the laptop monitor!
-    hyprctl keyword monitor $INTERNAL_MONITOR,preferred,0x0,1
-    move_all_workspaces_to_monitor $INTERNAL_MONITOR
+else # If the external monitor is disconnected without running this script first, it might become the case that no monitor is on - therefore turn on the laptop monitor!
+  hyprctl keyword monitor $INTERNAL_MONITOR,preferred,0x0,1
+  move_all_workspaces_to_monitor $INTERNAL_MONITOR
 fi
